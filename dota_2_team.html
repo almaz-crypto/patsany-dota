@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команда Пацаны | Dota 2</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        esport: {
+                            dark: '#050505',
+                            gold: '#FFD700',
+                            red: '#E53935'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Teko"', 'sans-serif'],
+                        body: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .gold-shadow {
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.4), inset 0 0 20px rgba(229, 57, 53, 0.2);
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+        
+        /* Subtle scanline effect overlay */
+        .scanlines::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 50;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="font-body min-h-screen flex flex-col items-center justify-center relative p-4 sm:p-8 scanlines">
+
+    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <!-- Red glow top left -->
+        <div class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-esport-red rounded-full mix-blend-screen filter blur-[150px] opacity-20"></div>
+        <!-- Gold glow bottom right -->
+        <div class="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-esport-gold rounded-full mix-blend-screen filter blur-[150px] opacity-15"></div>
+    </div>
+
+    <header class="text-center w-full max-w-4xl mx-auto mb-10 z-10 pt-10">
+        <div class="inline-block px-4 py-1 border border-esport-red text-esport-red rounded-full text-sm sm:text-base font-bold uppercase tracking-[0.2em] mb-6 bg-esport-red/10 backdrop-blur-sm">
+            Dota 2 Professional Roster
+        </div>
+        
+        <h1 class="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] uppercase tracking-wide text-white">
+            Здарова <br>
+            <span class="text-4xl sm:text-5xl md:text-6xl text-gray-300">вас приветствуют</span> <br>
+            <span class="text-esport-gold text-glow">Пацаны</span>
+        </h1>
+    </header>
+
+    <main class="w-full max-w-6xl mx-auto z-10 flex flex-col items-center">
+        <!-- Image Container -->
+        <div class="relative w-full rounded-2xl p-1 bg-gradient-to-br from-esport-gold via-orange-500 to-esport-red gold-shadow transition-transform duration-700 hover:scale-[1.02]">
+            
+            <img 
+                src="1c95203e-c8f5-4691-9490-53b0ced2cf74.jpg" 
+                alt="Команда Пацаны" 
+                class="w-full h-auto object-cover rounded-xl block relative z-10 bg-black"
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/FFD700?text=Изображение+команды+не+найдено';"
+            >
+            
+            <!-- Vignette inner shadow -->
+            <div class="absolute inset-1 rounded-xl shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] z-20 pointer-events-none"></div>
+        </div>
+    </main>
+
+    <footer class="w-full max-w-4xl mx-auto mt-12 mb-10 z-10 flex flex-col sm:flex-row justify-center gap-6">
+        <button class="font-heading text-xl sm:text-2xl uppercase tracking-widest px-10 py-3 bg-esport-gold text-black rounded hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] transform hover:-translate-y-1">
+            Наш Состав
+        </button>
+        <button class="font-heading text-xl sm:text-2xl uppercase tracking-widest px-10 py-3 border-2 border-esport-red text-esport-red rounded bg-black/50 backdrop-blur-sm hover:bg-esport-red hover:text-white transition-all duration-300 transform hover:-translate-y-1">
+            Расписание Игр
+        </button>
+    </footer>
+
+</body>
+</html>
